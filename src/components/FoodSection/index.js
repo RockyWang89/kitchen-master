@@ -1,6 +1,7 @@
 import axios from "axios";
 import {useState, useEffect} from "react";
 import FoodCard from "../FoodCard";
+import { API_KEY } from "../../static";
 
 function FoodSection(props) {
     const [foodList, setFoodList] = useState([]);
@@ -15,7 +16,7 @@ function FoodSection(props) {
                 q: props.keyword
             },
             headers: {
-                'X-RapidAPI-Key': 'bf0788e404msh3733f6bc641bf10p17d9ccjsn2b3414bb1247',
+                'X-RapidAPI-Key': API_KEY,
                 'X-RapidAPI-Host': 'tasty.p.rapidapi.com'
             }
         })
