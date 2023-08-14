@@ -1,11 +1,26 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
+import { useNavigate, useLocation } from "react-router-dom"
 import { Ripple, initTE } from "tw-elements";
+import { useSelector, useDispatch } from "react-redux";
+import { selectKeyword, searchByKeyword } from "../../store/searchingSlice";
 
 function SearchBox() {
+    const keyword = useSelector(selectKeyword);
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+    const location = useLocation();
+    const searchInput = useRef("");
 
     useEffect(()=>{
         initTE({Ripple});
     }, []);
+
+    const goSearching = () => {
+        dispatch(searchByKeyword(searchInput.current.value))
+        if(location.pathname !== '/search-result') {
+            navigate('/search-result');
+        }
+    };
 
     return <div className="relative flex flex-wrap items-stretch px-3 max-md:py-2">
         <input
@@ -13,13 +28,15 @@ function SearchBox() {
         className="relative m-0 -mr-0.5 block flex-auto rounded-l border border-solid border-neutral-300 bg-transparent bg-clip-padding px-3 py-[0.25rem] text-base font-normal leading-[1.6] text-neutral-700 outline-none transition duration-200 ease-in-out focus:z-[3] focus:border-primary focus:text-neutral-700 focus:shadow-[inset_0_0_0_1px_rgb(59,113,202)] focus:outline-none dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200 dark:focus:border-primary"
         placeholder="Search"
         aria-label="Search"
-        aria-describedby="button-addon1" />
+        aria-describedby="button-addon1" 
+        ref={searchInput}/>
         <button
         className="relative z-[2] flex items-center rounded-r bg-primary px-6 py-2.5 text-xs font-medium uppercase leading-tight text-white shadow-md transition duration-150 ease-in-out hover:bg-primary-700 hover:shadow-lg focus:bg-primary-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary-800 active:shadow-lg"
         type="button"
         id="button-addon1"
         data-te-ripple-init
-        data-te-ripple-color="light">
+        data-te-ripple-color="light"
+        onClick={goSearching}>
         <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 20 20"
