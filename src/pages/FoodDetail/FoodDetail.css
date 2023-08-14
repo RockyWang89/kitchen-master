@@ -1,0 +1,7 @@
+.selected-tab {
+    border-bottom: 2px solid rgb(59 130 246);
+}
+
+.selected-tab g {
+    fill: rgb(59 130 246);
+}
