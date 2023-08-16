@@ -28,7 +28,7 @@ function Calendar() {
                 Clear Calendar
             </button>
         </div>
-        <div className="px-[4vw] py-8">
+        <div className="px-[4vw] py-10">
             <CalendarTableDesktop />
             <CalendarTableMobile />
         </div>

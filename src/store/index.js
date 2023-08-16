@@ -1,4 +1,6 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
+import logger from 'redux-logger';
+import thunk from 'redux-thunk';
 import favoriteReducer from './favoriteSlice';
 import searchingReducer from './searchingSlice';
 import calendarReducer from './calendarSlice';
@@ -20,7 +22,8 @@ const rootReducer = combineReducers({
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 export const store  = configureStore({
-    reducer: persistedReducer
+    reducer: persistedReducer,
+    middleware: [thunk, logger]
 });
 
 export const persistor = persistStore(store);
