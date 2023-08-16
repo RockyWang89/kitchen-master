@@ -1,11 +1,10 @@
 import { useEffect, useRef } from "react";
 import { useNavigate, useLocation } from "react-router-dom"
 import { Ripple, initTE } from "tw-elements";
-import { useSelector, useDispatch } from "react-redux";
-import { selectKeyword, searchByKeyword } from "../../store/searchingSlice";
+import { useDispatch } from "react-redux";
+import { searchByKeyword } from "../../store/searchingSlice";
 
 function SearchBox() {
-    const keyword = useSelector(selectKeyword);
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const location = useLocation();
