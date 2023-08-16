@@ -13,10 +13,11 @@ const calendarSlice = createSlice({
             state.dietPlan[day][mealtime].push(food);
         },
         removePlan: (state, action) => {
-
+            const {day, mealtime, id} = action.payload;
+            state.dietPlan[day][mealtime] = state.dietPlan[day][mealtime].filter(item => item.id !== id);
         },
-        clearPlans: (state, action) => {
-
+        clearPlans: (state) => {
+            state.dietPlan = [[[],[],[]],[[],[],[]],[[],[],[]],[[],[],[]],[[],[],[]],[[],[],[]],[[],[],[]]];
         }
     }
 });

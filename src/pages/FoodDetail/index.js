@@ -1,7 +1,7 @@
 import { useEffect, useState, useMemo } from "react";
 import { useSearchParams } from "react-router-dom";
 import axios from "axios";
-import { API_KEY } from "../../static";
+import { API_KEY, DAYS } from "../../static";
 import NutritionTable from "../../components/NutritionTable";
 import { useSelector, useDispatch } from 'react-redux';
 import { selectFavoritesIds, addFavorite, removeFavorite } from '../../store/favoriteSlice';
@@ -158,13 +158,7 @@ function FoodDetail() {
                                     <section>
                                         <label htmlFor="day">Day: </label>
                                         <select id="day" value={day} onChange={e => setDay(e.target.value)}>
-                                            <option value={0}>Moday</option>
-                                            <option value={1}>Tuesday</option>
-                                            <option value={2}>Wednesday</option>
-                                            <option value={3}>Thursday</option>
-                                            <option value={4}>Friday</option>
-                                            <option value={5}>Saturday</option>
-                                            <option value={6}>Sunday</option>
+                                            {DAYS.map((item, index) => <option value={index} key={item}>{item}</option>)}
                                         </select>
                                     </section>
                                     <section>
