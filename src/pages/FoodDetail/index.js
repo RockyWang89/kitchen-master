@@ -11,7 +11,7 @@ import './FoodDetail.css';
 
 function FoodDetail() {
     const dispatch = useDispatch();
-    const [searchParams, setSearchParams] = useSearchParams();
+    const [searchParams] = useSearchParams();
     const foodId = searchParams.get("fid");
     const [food, setFood] = useState({});
     const [currentTag, setCurrentTag] = useState('ingredients');
