@@ -52,7 +52,8 @@ function Navbar() {
                 data-te-nav-item-ref>
                     <NavLink
                     className="p-0 text-neutral-500 transition duration-200 hover:text-neutral-700 hover:ease-in-out focus:text-neutral-700 disabled:text-black/30 motion-reduce:transition-none dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:text-neutral-400 md:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
-                    to="favorites"
+                    aria-current="page"
+                    to="/favorites"
                     data-te-nav-link-ref>Favorites</NavLink>
                 </li>
                 <li
@@ -60,8 +61,8 @@ function Navbar() {
                 data-te-nav-item-ref>
                     <NavLink
                     className="p-0 text-neutral-500 transition duration-200 hover:text-neutral-700 hover:ease-in-out focus:text-neutral-700 disabled:text-black/30 motion-reduce:transition-none dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:text-neutral-400 md:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
+                    aria-current="page"
                     to="/calendar"
-                    type="button"
                     data-te-nav-link-ref>Calendar</NavLink>
                 </li>
             </ul>

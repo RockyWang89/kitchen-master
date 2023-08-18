@@ -25,7 +25,7 @@ function FoodCard(props) {
                 {props.name}
             </h5>
         </div>
-        <button className='absolute right-4 top-4' onClick={changeFavorite}>
+        <button className='absolute right-4 top-4' onClick={changeFavorite} aria-label={favoritesIds.includes(props.id) ? 'remove from favorites' : 'add to favorites'}>
             {
                 favoritesIds.includes(props.id) ?
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-8 h-8 text-red-600">

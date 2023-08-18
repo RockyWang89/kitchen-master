@@ -19,34 +19,41 @@ function Slider() {
             className="relative float-left -mr-[100%] w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
             data-te-carousel-item
             data-te-carousel-active>
-                <img
-                src="/images/beer lover.jpg"
-                className="block w-full"
-                alt="beer lover" />
+                <a href="https://master.d3svysz6cekerd.amplifyapp.com/#/home" target="_blank" rel="noreferrer">
+                    <img
+                    src="/images/beer lover.jpg"
+                    className="block w-full"
+                    alt="beer lover" />                
+                </a>
             </div>
 
             <div
             className="relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
             data-te-carousel-item>
-                <img
-                src="/images/food festival.jpg"
-                className="block w-full"
-                alt="food festival" />
+                <a href="https://www.melbournefoodandwine.com.au/" target="_blank" rel="noreferrer">
+                    <img
+                    src="/images/food festival.jpg"
+                    className="block w-full"
+                    alt="food festival" />                    
+                </a>
             </div>
 
             <div
             className="relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
             data-te-carousel-item>
-                <img
-                src="/images/master chef.jpg"
-                className="block w-full"
-                alt="master chef" />
+                <a href="https://www.youtube.com/user/MasterChefAUSTRALIA" target="_blank" rel="noreferrer">
+                    <img
+                    src="/images/master chef.jpg"
+                    className="block w-full"
+                    alt="master chef" />
+                </a>
             </div>
         </div>
 
         <button
         className="absolute bottom-0 left-0 top-0 z-[1] flex w-[15%] items-center justify-center border-0 bg-none p-0 text-center text-white opacity-50 transition-opacity duration-150 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] hover:text-white hover:no-underline hover:opacity-90 hover:outline-none focus:text-white focus:no-underline focus:opacity-90 focus:outline-none motion-reduce:transition-none"
         type="button"
+        aria-label="previous"
         data-te-target="#carouselExampleControls"
         data-te-slide="prev">
             <span className="inline-block h-8 w-8">
@@ -71,6 +78,7 @@ function Slider() {
         <button
         className="absolute bottom-0 right-0 top-0 z-[1] flex w-[15%] items-center justify-center border-0 bg-none p-0 text-center text-white opacity-50 transition-opacity duration-150 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] hover:text-white hover:no-underline hover:opacity-90 hover:outline-none focus:text-white focus:no-underline focus:opacity-90 focus:outline-none motion-reduce:transition-none"
         type="button"
+        aria-label="next"
         data-te-target="#carouselExampleControls"
         data-te-slide="next">
             <span className="inline-block h-8 w-8">
