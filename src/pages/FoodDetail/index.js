@@ -85,7 +85,7 @@ function FoodDetail() {
                 <h1 className="text-2xl leading-[3rem]">{food.name}</h1>
                 <div className="self-center ml-auto justify-end max-md:mt-2">
                     {/** favorite button */}
-                    <button className="mx-1" onClick={changeFavorite}>
+                    <button className="mx-1" onClick={changeFavorite} aria-label={favoritesIds.includes(food.id) ? 'remove from favorites' : 'add to favorites'}>
                         {
                             favoritesIds.includes(food.id) ?
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-8 h-8 text-red-600">
@@ -102,6 +102,7 @@ function FoodDetail() {
                     className="mx-1"
                     data-te-toggle="modal"
                     data-te-target="#exampleModalCenter"
+                    aria-label="add to calendar"
                     // data-te-ripple-init
                     // data-te-ripple-color="light"
                     >
@@ -231,7 +232,7 @@ function FoodDetail() {
                     className={`flex justify-center w-full my-2 block px-7 pb-3.5 pt-4 text-xs font-medium uppercase leading-tight text-neutral-500 hover:bg-neutral-100 dark:text-neutral-400 dark:hover:bg-transparent ${currentTag === 'instruction' && 'selected-tab'}`}
                     role="tab"
                     aria-controls="tabs-instruction"
-                    aria-selected="true"
+                    aria-selected="false"
                     onClick={()=>setCurrentTag('instruction')}
                     >
                         <svg xmlns="http://www.w3.org/2000/svg" version="1.0" className="w-8 h-8 " viewBox="0 0 512.000000 512.000000" preserveAspectRatio="xMidYMid meet">
